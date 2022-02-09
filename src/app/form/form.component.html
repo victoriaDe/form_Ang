@@ -1,0 +1,42 @@
+<div class="container" id="form-container" (click)="closePopUp($event)">
+  <form class="form" [formGroup]="form">
+    <div class="form-cross" id="cross">X</div>
+    <h3 class="form-title">Обратный звонок</h3>
+
+    <div class="form-group" [ngClass]="displayFieldCss('name')">
+      <label for="name" class="control-label required form-label">Ваше имя</label>
+      <input type="text" id="name" placeholder="Введите Ваше имя" class="form-control" formControlName="name"
+             (change)="untouch('name')">
+
+      <app-field-error-display
+        [displayError]="isFieldValid('name')"
+        errorMsg="Введите Ваше имя">
+      </app-field-error-display>
+    </div>
+
+    <div class="form-group" [ngClass]="displayFieldCss('phone')">
+      <label class="form-label form-label" for="phone">Номер телефона</label>
+      <div class="phone-container">
+        <select name="code-number" id="codeNumber" formControlName="code">
+          <option>+7</option>
+          <option>+8</option>
+          <option>+9</option>
+        </select>
+        <input type="tel" id="phone" placeholder="123 456 789" class="form-control" formControlName="phone"
+               (change)="untouch('phone')">
+        <app-field-error-display
+          [displayError]="isFieldValid('phone')"
+          errorMsg="Введите Ваш номер">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="displayFieldCss('comment')">
+      <label class="form-label form-label" for="comment">Ваш комментарий</label>
+      <textarea class="form-comment" id="comment" placeholder="Опишите суть Вашего вопроса"
+                formControlName="comment"></textarea>
+      <button class="form-btn" type="submit" id="formBtn" (click)="onSubmit()">Позвоните нам</button>
+    </div>
+
+  </form>
+</div>

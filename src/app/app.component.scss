@@ -1,0 +1,41 @@
+header {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-btn {
+  width: 100px;
+  padding: 15px;
+  margin: 20px auto;
+
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid darkcyan;
+
+  background: ghostwhite;
+  color: #003232;
+
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+
+  transition: 0.4s color ease-in-out, 0.4s background-color ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #003232;
+    color: ghostwhite;
+  }
+}
+
+.hide {
+  display: none;
+}
